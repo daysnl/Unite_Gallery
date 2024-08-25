@@ -1,0 +1,15 @@
+langcode: nl
+status: true
+dependencies: {  }
+id: js_unite_gallery
+label: 'JS Unite Gallery'
+code: |
+  /* enkel nodig om jquery te laden */
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: true
+preprocess: true
+conditions: {  }
+contexts: {  }
+conditions_require_all: true

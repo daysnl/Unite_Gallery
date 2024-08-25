@@ -1,0 +1,32 @@
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_ug_view_thumbnail_position
+field_name: field_ug_view_thumbnail_position
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: top
+      label: top
+    -
+      value: right
+      label: right
+    -
+      value: bottom
+      label: bottom
+    -
+      value: left
+      label: left
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

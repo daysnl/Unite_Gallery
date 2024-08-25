@@ -1,0 +1,34 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.ug_view_movies.field_ug_view_content_type
+    - field.field.node.ug_view_movies.field_ug_view_video_code_field
+    - field.field.node.ug_view_movies.field_ug_view_video_description_
+    - field.field.node.ug_view_movies.field_ug_view_video_twig
+    - node.type.ug_view_movies
+  module:
+    - twig_field
+    - user
+id: node.ug_view_movies.default
+targetEntityType: node
+bundle: ug_view_movies
+mode: default
+content:
+  field_ug_view_video_twig:
+    type: twig
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_ug_view_content_type: true
+  field_ug_view_video_code_field: true
+  field_ug_view_video_description_: true
+  langcode: true

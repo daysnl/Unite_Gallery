@@ -1,0 +1,28 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ug_view_movies.field_ug_view_content_type
+    - field.field.node.ug_view_movies.field_ug_view_video_code_field
+    - field.field.node.ug_view_movies.field_ug_view_video_description_
+    - field.field.node.ug_view_movies.field_ug_view_video_twig
+    - node.type.ug_view_movies
+  module:
+    - user
+id: node.ug_view_movies.teaser
+targetEntityType: node
+bundle: ug_view_movies
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_ug_view_content_type: true
+  field_ug_view_video_code_field: true
+  field_ug_view_video_description_: true
+  field_ug_view_video_twig: true
+  langcode: true

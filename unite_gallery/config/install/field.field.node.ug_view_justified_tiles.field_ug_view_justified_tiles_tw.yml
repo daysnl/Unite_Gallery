@@ -1,0 +1,23 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_justified_tiles_tw
+    - node.type.ug_view_justified_tiles
+  module:
+    - twig_field
+id: node.ug_view_justified_tiles.field_ug_view_justified_tiles_tw
+field_name: field_ug_view_justified_tiles_tw
+entity_type: node
+bundle: ug_view_justified_tiles
+label: 'UG View Justified tiles Twig'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "{# Unite Gallery Tiles Justified Drupal integration #}\r\n{# assuming highest node id is around 500, else change. No problem with higher values #}\r\n{% set highest_nid = 500 %}\r\n\r\n{# for all displays #}\r\n<script type='text/javascript' src='/libraries/unitegallery/js/unitegallery.min.js'></script>\t\r\n<link rel='stylesheet' href='/libraries/unitegallery/css/unite-gallery.css' type='text/css' />\r\n{% set field_name = node.field_ug_view_imagefield.value|trim %}\r\n{% set content_type = node.field_ug_view_content_type.value|trim %}\r\n{% set max_number_images = node.field_ug_view_number_of_images.value|trim %}\r\n{% set display_mode = node.field_ug_view_tiles_display_mode.value|trim %}\r\n{% set image_style_small = node.field_ug_view_image_style_small.value|trim %}\r\n{% set image_style_big = node.field_ug_view_image_style_big.value|trim %}\r\n{% set lightbox_background = node.field_ug_view_lightbox_backgroun.color %}\r\n\r\n{# load js, depending on display mode #}\r\n{% if display_mode == 'Grid' %}\r\n<script src='/libraries/unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js' type='text/javascript'></script>\r\n{% else %}\r\n<script type='text/javascript' src='/libraries/unitegallery/themes/tiles/ug-theme-tiles.js'></script>\r\n{% endif %}\r\n\r\n{% set row_height = node.field_ug_view_row_height.value|trim %}\r\n{% set space_between = node.field_ug_view_space_between.value|trim %}\r\n{% set image_shadow = node.field_ug_view_image_shadow.value %}\r\n{% set column_width = node.field_ug_view_tiles_column_width.value|trim %}\r\n\r\n\r\n<div id=\"gallery\" style=\"display:none;\">\r\n{% set counter = 0 %}\r\n{% for nid in 0..highest_nid if counter < max_number_images %}\r\n{% set zoeknode = bamboo_load_entity('node', nid) %}\r\n{% if zoeknode.bundle == content_type %}\r\n{% set titel = zoeknode.title.value %}\r\n{% set afbeeldingen = drupal_field(field_name, 'node', nid, {type: 'image_url', settings: {image_style: image_style_small}}) %}\r\n{% set afbeeldingengroot = drupal_field(field_name, 'node', nid, {type: 'image_url', settings: {image_style: image_style_big}}) %}\r\n    \r\n{% set x = 0 %} \r\n   {% for afbeelding in afbeeldingen if counter < max_number_images %}\r\n     {% if afbeeldingen[x] is not empty %}\r\n          <a href=\"/node/{{nid}}\">\r\n\t\t<img alt=\"{{titel}}\"\r\n             src=\"{{ afbeeldingen[x] }}\"\r\n\t\t     data-image=\"{{ afbeeldingengroot[x] }}\"\r\n             style=\"display:none\">\r\n\t\t</a>\r\n    {% set counter = counter + 1 %}\r\n    {% endif %}\r\n    {% set x = x + 1 %}\r\n    \r\n   {% endfor %}\r\n{% endif %}\r\n{% endfor %}\r\n</div>\r\n<style>\r\n.ug-lightbox-overlay{\r\n  background-color:{{lightbox_background}} !important;\r\n</style>\r\n<script type=\"text/javascript\">\r\n\r\n\t\tjQuery(document).ready(function(){\r\n\r\n\t\t\tjQuery(\"#gallery\").unitegallery({\r\n\t\t\t\ttiles_type:\"{{ display_mode|lower }}\",\r\n                tile_show_link_icon:true,\r\n\t\t\t\tlightbox_textpanel_title_color:\"e5e5e5\",\r\n\t\t\t\ttheme_gallery_padding:0,\r\n\t\t\t\ttile_enable_textpanel: true,\r\n                tile_link_newpage: false,\r\n                {# justified display #}\r\n\t\t\t\ttile_border_color:\"#F0F0F0\",\r\n\t\t\t\ttile_outline_color:\"#8B8B8B\",\r\n\t\t\t\ttile_enable_shadow:{{ image_shadow }},\r\n\t\t\t\ttile_shadow_color:\"#8B8B8B\",\r\n                tiles_justified_space_between:{{ space_between }},\r\n\t\t\t\ttiles_justified_row_height:{{ row_height }},\r\n  \r\n               {# column display #}\r\n  \t            tiles_col_width: {{ column_width }},\r\n               {# nested display #}\r\n                tiles_nested_optimal_tile_width: {{ column_width }},\r\n               {# grid display #}\r\n                tile_width: {{ column_width }},\t\t\t\t\t\t\r\n\t\t\t\ttile_height: {{ column_width }}\t\t\t\t\t\t\r\n\t          \r\n\t\t\t\t\r\n  });\r\n\r\n\t\t});\r\n\t\t\r\n\t</script> \r\n"
+default_value_callback: ''
+settings:
+  display_mode: ''
+field_type: twig

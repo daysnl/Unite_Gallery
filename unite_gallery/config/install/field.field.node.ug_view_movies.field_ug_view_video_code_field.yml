@@ -1,0 +1,20 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_video_code_field
+    - node.type.ug_view_movies
+id: node.ug_view_movies.field_ug_view_video_code_field
+field_name: field_ug_view_video_code_field
+entity_type: node
+bundle: ug_view_movies
+label: 'UG View Video code field'
+description: 'machine name of the field with the youtube code'
+required: false
+translatable: false
+default_value:
+  -
+    value: field_video_code
+default_value_callback: ''
+settings: {  }
+field_type: string

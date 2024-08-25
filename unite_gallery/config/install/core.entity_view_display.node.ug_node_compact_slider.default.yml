@@ -1,0 +1,30 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.ug_node_compact_slider.field_ug_node_compact_twig
+    - field.field.node.ug_node_compact_slider.field_ug_node_image
+    - node.type.ug_node_compact_slider
+  module:
+    - twig_field
+    - user
+id: node.ug_node_compact_slider.default
+targetEntityType: node
+bundle: ug_node_compact_slider
+mode: default
+content:
+  field_ug_node_compact_twig:
+    type: twig
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_ug_node_image: true
+  langcode: true

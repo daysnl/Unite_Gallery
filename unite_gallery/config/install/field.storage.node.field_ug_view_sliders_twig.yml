@@ -1,0 +1,18 @@
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+    - twig_field
+id: node.field_ug_view_sliders_twig
+field_name: field_ug_view_sliders_twig
+entity_type: node
+type: twig
+settings: {  }
+module: twig_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

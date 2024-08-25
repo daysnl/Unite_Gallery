@@ -1,0 +1,266 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.ug_view_justified_tiles.field_ug_view_content_type
+    - field.field.node.ug_view_justified_tiles.field_ug_view_image_shadow
+    - field.field.node.ug_view_justified_tiles.field_ug_view_image_style_big
+    - field.field.node.ug_view_justified_tiles.field_ug_view_image_style_small
+    - field.field.node.ug_view_justified_tiles.field_ug_view_imagefield
+    - field.field.node.ug_view_justified_tiles.field_ug_view_justified_tiles_tw
+    - field.field.node.ug_view_justified_tiles.field_ug_view_lightbox_backgroun
+    - field.field.node.ug_view_justified_tiles.field_ug_view_number_of_images
+    - field.field.node.ug_view_justified_tiles.field_ug_view_row_height
+    - field.field.node.ug_view_justified_tiles.field_ug_view_space_between
+    - field.field.node.ug_view_justified_tiles.field_ug_view_tiles_column_width
+    - field.field.node.ug_view_justified_tiles.field_ug_view_tiles_display_mode
+    - node.type.ug_view_justified_tiles
+  module:
+    - color_field
+    - conditional_fields
+    - path
+    - twig_field
+id: node.ug_view_justified_tiles.default
+targetEntityType: node
+bundle: ug_view_justified_tiles
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ug_view_content_type:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ug_view_image_shadow:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings:
+      conditional_fields:
+        890c340e-0707-4ee5-84e1-9ab8a02c33d1:
+          entity_type: node
+          bundle: ug_view_justified_tiles
+          dependee: field_ug_view_tiles_display_mode
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: Justified
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_ug_view_image_style_big:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ug_view_image_style_small:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ug_view_imagefield:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ug_view_justified_tiles_tw:
+    type: twig
+    weight: 8
+    region: content
+    settings:
+      toolbar: true
+      buttons:
+        - bold
+        - italic
+        - underline
+        - strike-through
+        - list-numbered
+        - list-bullet
+        - link
+        - horizontal-rule
+        - undo
+        - redo
+        - clear-formatting
+        - enlarge
+        - shrink
+      lineWrapping: false
+      lineNumbers: false
+      foldGutter: false
+      autoCloseTags: false
+      styleActiveLine: false
+      mode: html_twig
+      rows: 35
+      placeholder: ''
+    third_party_settings: {  }
+  field_ug_view_lightbox_backgroun:
+    type: color_field_widget_html5
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ug_view_number_of_images:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ug_view_row_height:
+    type: number
+    weight: 18
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        452d74bf-58f0-4ba8-880d-ad809f29daeb:
+          entity_type: node
+          bundle: ug_view_justified_tiles
+          dependee: field_ug_view_tiles_display_mode
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: Justified
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_ug_view_space_between:
+    type: number
+    weight: 16
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        1803a696-745c-426c-8548-6e5e8cd1ed00:
+          entity_type: node
+          bundle: ug_view_justified_tiles
+          dependee: field_ug_view_tiles_display_mode
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: Justified
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_ug_view_tiles_column_width:
+    type: number
+    weight: 19
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        9549a932-2c56-4d91-9e1f-9bcbe648efa1:
+          entity_type: node
+          bundle: ug_view_justified_tiles
+          dependee: field_ug_view_tiles_display_mode
+          settings:
+            state: '!visible'
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: Justified
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_ug_view_tiles_display_mode:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

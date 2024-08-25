@@ -1,0 +1,24 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ug_node_justified_tiles.field_ug_node_image
+    - field.field.node.ug_node_justified_tiles.field_ug_node_twig
+    - node.type.ug_node_justified_tiles
+  module:
+    - user
+id: node.ug_node_justified_tiles.teaser
+targetEntityType: node
+bundle: ug_node_justified_tiles
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_ug_node_image: true
+  field_ug_node_twig: true
+  langcode: true

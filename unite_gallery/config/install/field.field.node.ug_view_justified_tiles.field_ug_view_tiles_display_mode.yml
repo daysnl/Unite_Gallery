@@ -1,0 +1,22 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_tiles_display_mode
+    - node.type.ug_view_justified_tiles
+  module:
+    - options
+id: node.ug_view_justified_tiles.field_ug_view_tiles_display_mode
+field_name: field_ug_view_tiles_display_mode
+entity_type: node
+bundle: ug_view_justified_tiles
+label: 'UG View Tiles Display mode'
+description: 'Choose the display mode of the tiles'
+required: true
+translatable: false
+default_value:
+  -
+    value: Justified
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,17 @@
+langcode: nl
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'UG View Movies'
+type: ug_view_movies
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

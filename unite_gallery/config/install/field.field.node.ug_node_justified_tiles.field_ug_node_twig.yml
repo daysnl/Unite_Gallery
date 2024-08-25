@@ -1,0 +1,23 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_node_twig
+    - node.type.ug_node_justified_tiles
+  module:
+    - twig_field
+id: node.ug_node_justified_tiles.field_ug_node_twig
+field_name: field_ug_node_twig
+entity_type: node
+bundle: ug_node_justified_tiles
+label: 'UG Node Twig'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<script type='text/javascript' src='/libraries/unitegallery/js/unitegallery.min.js'></script>\t\r\n<link rel='stylesheet' href='/libraries/unitegallery/css/unite-gallery.css' type='text/css' />\t\r\n<script type='text/javascript' src='/libraries/unitegallery/themes/tiles/ug-theme-tiles.js'></script>\r\n\r\n<div id=\"gallery\" style=\"display:none;\">  \r\n{% for afbeelding in node.field_ug_node_image %} \r\n {% set afbeelding_klein = file_url(afbeelding.entity.uri.value|image_style('large')) %}\r\n {% set afbeelding_groot = file_url(afbeelding.entity.uri.value|image_style('big')) %}\r\n    \r\n         <a href=\"\">\r\n\t\t<img alt=\"{{afbeelding.alt }}\"\r\n             src=\"{{ afbeelding_klein }}\"\r\n\t\t     data-image=\"{{ afbeelding_groot }}\"\r\n             style=\"display:none\">\r\n\t\t</a>\r\n    \r\n{% endfor %}\r\n</div>\r\n<script type=\"text/javascript\">\r\n\r\n\t\tjQuery(document).ready(function(){\r\n\r\n\t\t\tjQuery(\"#gallery\").unitegallery({\r\n\t\t\t\ttiles_type:\"justified\",\t\t\t\t\r\n\t\t\t\ttile_border_color:\"#F0F0F0\",\r\n\t\t\t\ttile_outline_color:\"#8B8B8B\",\r\n\t\t\t\ttile_enable_shadow:true,\r\n\t\t\t\ttile_shadow_color:\"#8B8B8B\",\r\n\t\t\t\ttile_show_link_icon:true,\r\n\t\t\t\tlightbox_textpanel_title_color:\"e5e5e5\",\r\n\t\t\t\ttheme_gallery_padding:0,\r\n\t\t\t\ttiles_justified_space_between:2,\r\n\t\t\t\ttiles_justified_row_height:150,\t\r\n  \r\n                tile_enable_textpanel: true\t\t \t//enable textpanel\r\n\t\t\t\t\r\n  });\r\n\r\n\t\t});\r\n\t\t\r\n\t</script>\r\n"
+default_value_callback: ''
+settings:
+  display_mode: ''
+field_type: twig

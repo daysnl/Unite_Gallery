@@ -1,0 +1,23 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_node_compact_twig
+    - node.type.ug_node_compact_slider
+  module:
+    - twig_field
+id: node.ug_node_compact_slider.field_ug_node_compact_twig
+field_name: field_ug_node_compact_twig
+entity_type: node
+bundle: ug_node_compact_slider
+label: 'UG Node Compact Twig'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "{# Unite Gallery Tiles Justified Drupal integration #}\r\n\r\n{# for all displays #}\r\n\r\n<script type='text/javascript' src='/libraries/unitegallery/js/unitegallery.min.js'></script>\t\r\n<link rel='stylesheet' href='/libraries/unitegallery/css/unite-gallery.css' type='text/css' />\r\n\r\n\r\n{# load js, depending on display mode #}\r\n\r\n<script src='/libraries/unitegallery/themes/compact/ug-theme-compact.js' type='text/javascript'></script>\r\n\r\n<div id=\"gallery\" style=\"display:none;\">\r\n\r\n{% for afbeelding in node.field_ug_node_image %} \r\n {% set afbeelding_klein = file_url(afbeelding.entity.uri.value|image_style('large')) %}\r\n {% set afbeelding_groot = file_url(afbeelding.entity.uri.value|image_style('big')) %}\r\n    \r\n         <a href=\"\">\r\n\t\t<img alt=\"{{afbeelding.alt }}\"\r\n             src=\"{{ afbeelding_klein }}\"\r\n\t\t     data-image=\"{{ afbeelding_groot }}\"\r\n             style=\"display:none\">\r\n\t\t</a>\r\n    \r\n{% endfor %}\r\n\r\n</div>\r\n\r\n<script type=\"text/javascript\">\r\n\r\n\tjQuery(document).ready(function(){\t\t\t\t\t\t\t\r\n\t\tjQuery(\"#gallery\").unitegallery({\r\n        gallery_theme: \"compact\",\r\n        slider_scale_mode: \"fit\",\r\n        slider_enable_text_panel: true,\r\n        slider_textpanel_always_on: true,\r\n        slider_textpanel_enable_title: true,\r\n     \ttheme_panel_position: \"right\",\r\n        thumb_fixed_size:false,\r\n        thumb_height:100,       \t\t\t \r\n        gallery_autoplay:true        \r\n\t\t\t     \r\n         });\t          \r\n\t\t});\r\n\t\t\r\n\t</script> \r\n"
+default_value_callback: ''
+settings:
+  display_mode: ''
+field_type: twig

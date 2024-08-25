@@ -1,0 +1,23 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_video_twig
+    - node.type.ug_view_movies
+  module:
+    - twig_field
+id: node.ug_view_movies.field_ug_view_video_twig
+field_name: field_ug_view_video_twig
+entity_type: node
+bundle: ug_view_movies
+label: 'UG View video twig'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "{# Unite Gallery Tiles Justified Drupal integration #}\r\n{# assuming highest node id is around 500, else change. No problem with higher values #}\r\n{% set highest_nid = 500 %}\r\n\r\n{# for all displays #}\r\n\r\n<script type='text/javascript' src='/libraries/unitegallery/js/unitegallery.min.js'></script>\t\r\n<link rel='stylesheet' href='/libraries/unitegallery/css/unite-gallery.css' type='text/css' />\r\n\r\n{% set content_type = node.field_ug_view_content_type.value|trim %}\r\n{% set video_code = node.field_ug_view_video_code_field.value|trim %}\r\n{% set video_description = node.field_ug_view_video_description_.value|trim %}\r\n\r\n<!-- include Unite Gallery Theme Files -->\t\t\t\t\t\t\r\n<script src='/libraries/unitegallery/themes/video/ug-theme-video.js' type='text/javascript'></script>\r\n<!-- include one of the video skins -->\t\r\n<link  href='/libraries/unitegallery/themes/video/skin-right-thumb.css' rel='stylesheet' type='text/css' />\r\n\r\n<div id=\"gallery\">\r\n\r\n{% for nid in 0..highest_nid %}\r\n\r\n{% set zoeknode = bamboo_load_entity('node', nid) %}\r\n{% if zoeknode.bundle == content_type %}\r\n{% set titel = zoeknode.title.value %}\r\n{% set description = drupal_field(video_description, 'node', nid)  %}\r\n{% set videos = drupal_field(video_code, 'node', nid) %}\r\n\r\n    {% if videos is not empty %}      \r\n          <div data-type=\"youtube\"\r\n\t\t\tdata-videoid=\"{{ videos[0] }}\"\r\n\t\t\tdata-title=\"{{ titel }}\"\r\n\t\t\tdata-description=\"{{ description[0] }}\"></div>\r\n    \r\n    {% endif %} \r\n  \r\n{% endif %}\r\n{% endfor %}\r\n</div>\r\n\r\n<script type=\"text/javascript\">\r\n\r\n\t\tjQuery(document).ready(function(){\r\n\t\t\t\t\t\r\n\t\t\t\t\tjQuery(\"#gallery\").unitegallery({\r\n\t\t\t\t\t\tgallery_theme: \"video\"\r\n                        \r\n\t\t\t\t\t});\r\n\t\t\t\t});\r\n\t\t\r\n\t</script> \r\n"
+default_value_callback: ''
+settings:
+  display_mode: ''
+field_type: twig

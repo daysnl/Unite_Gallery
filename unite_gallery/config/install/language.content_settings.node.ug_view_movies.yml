@@ -1,0 +1,10 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.ug_view_movies
+id: node.ug_view_movies
+target_entity_type_id: node
+target_bundle: ug_view_movies
+default_langcode: site_default
+language_alterable: false

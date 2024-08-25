@@ -1,0 +1,22 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_thumbnail_position
+    - node.type.ug_view_sliders
+  module:
+    - options
+id: node.ug_view_sliders.field_ug_view_thumbnail_position
+field_name: field_ug_view_thumbnail_position
+entity_type: node
+bundle: ug_view_sliders
+label: 'UG View thumbnail position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: bottom
+default_value_callback: ''
+settings: {  }
+field_type: list_string

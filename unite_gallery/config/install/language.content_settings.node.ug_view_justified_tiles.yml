@@ -1,0 +1,10 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.ug_view_justified_tiles
+id: node.ug_view_justified_tiles
+target_entity_type_id: node
+target_bundle: ug_view_justified_tiles
+default_langcode: site_default
+language_alterable: false

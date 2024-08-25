@@ -1,0 +1,10 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.ug_node_compact_slider
+id: node.ug_node_compact_slider
+target_entity_type_id: node
+target_bundle: ug_node_compact_slider
+default_langcode: site_default
+language_alterable: false

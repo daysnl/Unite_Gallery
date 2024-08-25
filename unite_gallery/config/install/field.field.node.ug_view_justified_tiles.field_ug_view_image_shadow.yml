@@ -1,0 +1,22 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_image_shadow
+    - node.type.ug_view_justified_tiles
+id: node.ug_view_justified_tiles.field_ug_view_image_shadow
+field_name: field_ug_view_image_shadow
+entity_type: node
+bundle: ug_view_justified_tiles
+label: 'UG View image shadow'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

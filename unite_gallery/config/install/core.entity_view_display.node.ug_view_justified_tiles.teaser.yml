@@ -1,0 +1,44 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ug_view_justified_tiles.field_ug_view_content_type
+    - field.field.node.ug_view_justified_tiles.field_ug_view_image_shadow
+    - field.field.node.ug_view_justified_tiles.field_ug_view_image_style_big
+    - field.field.node.ug_view_justified_tiles.field_ug_view_image_style_small
+    - field.field.node.ug_view_justified_tiles.field_ug_view_imagefield
+    - field.field.node.ug_view_justified_tiles.field_ug_view_justified_tiles_tw
+    - field.field.node.ug_view_justified_tiles.field_ug_view_lightbox_backgroun
+    - field.field.node.ug_view_justified_tiles.field_ug_view_number_of_images
+    - field.field.node.ug_view_justified_tiles.field_ug_view_row_height
+    - field.field.node.ug_view_justified_tiles.field_ug_view_space_between
+    - field.field.node.ug_view_justified_tiles.field_ug_view_tiles_column_width
+    - field.field.node.ug_view_justified_tiles.field_ug_view_tiles_display_mode
+    - node.type.ug_view_justified_tiles
+  module:
+    - user
+id: node.ug_view_justified_tiles.teaser
+targetEntityType: node
+bundle: ug_view_justified_tiles
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_ug_view_content_type: true
+  field_ug_view_image_shadow: true
+  field_ug_view_image_style_big: true
+  field_ug_view_image_style_small: true
+  field_ug_view_imagefield: true
+  field_ug_view_justified_tiles_tw: true
+  field_ug_view_lightbox_backgroun: true
+  field_ug_view_number_of_images: true
+  field_ug_view_row_height: true
+  field_ug_view_space_between: true
+  field_ug_view_tiles_column_width: true
+  field_ug_view_tiles_display_mode: true
+  langcode: true

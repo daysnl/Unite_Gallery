@@ -1,0 +1,20 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_image_style_small
+    - node.type.ug_view_justified_tiles
+id: node.ug_view_justified_tiles.field_ug_view_image_style_small
+field_name: field_ug_view_image_style_small
+entity_type: node
+bundle: ug_view_justified_tiles
+label: 'UG View image style small'
+description: 'machine name of the image style for the tiles'
+required: false
+translatable: false
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: string

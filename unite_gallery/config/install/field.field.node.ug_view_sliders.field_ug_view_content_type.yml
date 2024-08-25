@@ -1,0 +1,20 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_content_type
+    - node.type.ug_view_sliders
+id: node.ug_view_sliders.field_ug_view_content_type
+field_name: field_ug_view_content_type
+entity_type: node
+bundle: ug_view_sliders
+label: 'UG View content type'
+description: 'Where do you want the thumbnails?'
+required: false
+translatable: true
+default_value:
+  -
+    value: article
+default_value_callback: ''
+settings: {  }
+field_type: string

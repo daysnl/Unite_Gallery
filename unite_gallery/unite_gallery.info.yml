@@ -1,0 +1,22 @@
+name: Unite Gallery
+description: integration into Drupal by Drupal. All credits to Unite Gallery.
+type: module
+core_version_requirement: ^10 || ^11
+dependencies:
+  - asset_injector
+  - color_field
+  - conditional_fields
+  - field
+  - file
+  - image
+  - language
+  - menu_ui
+  - node
+  - options
+  - path
+  - twig_field
+  - twig_tweak
+  - bamboo_twig
+  - bamboo_twig_loader
+  - user
+version: '2.2.0'

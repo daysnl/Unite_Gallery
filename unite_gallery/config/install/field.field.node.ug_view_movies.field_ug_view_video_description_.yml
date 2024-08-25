@@ -1,0 +1,20 @@
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ug_view_video_description_
+    - node.type.ug_view_movies
+id: node.ug_view_movies.field_ug_view_video_description_
+field_name: field_ug_view_video_description_
+entity_type: node
+bundle: ug_view_movies
+label: 'UG View video description field'
+description: 'the machine name of the description field of the video'
+required: false
+translatable: false
+default_value:
+  -
+    value: field_video_description
+default_value_callback: ''
+settings: {  }
+field_type: string
